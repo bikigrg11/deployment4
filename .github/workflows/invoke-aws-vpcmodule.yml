@@ -1,12 +1,11 @@
-on:
-  push:
-    branches:
-      - master
-     
-name: Terraform Apply
+name: Provision AWS VPC
+
+on: 
+  push: 
+    branches: 
+      - main
 
 jobs:
-        
   provision-vpc:
     name: provisionvpc
     runs-on: ubuntu-latest
@@ -30,7 +29,7 @@ jobs:
       id: apply
       run: |
         cd terraform/
-        terraform init
+        terraform init 
         terraform validate
         terraform plan 
 
