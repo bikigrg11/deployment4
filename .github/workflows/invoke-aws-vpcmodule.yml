@@ -27,7 +27,7 @@ jobs:
         terraform_wrapper: false
     
     - name: Terraform Apply
-        id:   apply
+        id: apply
         run: |
           cd terraform/
           terraform init
