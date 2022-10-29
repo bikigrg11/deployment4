@@ -22,9 +22,9 @@ jobs:
         aws-region: ${{ secrets.REGION }}
     
     - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_wrapper: false
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_wrapper: false
     
     - name: Terraform Apply
         id:   apply
