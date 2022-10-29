@@ -29,9 +29,13 @@ jobs:
       id: apply
       run: |
         cd terraform/
+        export aws_access_key= ${{ secrets.TF_USER_AWS_KEY }}/
+        export aws_secret_key= ${{ secrets.TF_USER_AWS_SECRET }}/
         terraform init 
         terraform validate
-        terraform plan 
+        terraform plan
+        terraform apply
+
 
 
 #terraform apply -auto-approve
